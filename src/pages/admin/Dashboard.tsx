@@ -1,46 +1,48 @@
 import { Link } from 'react-router'
 import {
-  Newspaper,
-  Clapperboard,
-  Podcast,
-  Mic2,
-  CalendarDays,
-  Users,
-  Eye,
-  Radio,
-  Tv,
-  TrendingUp,
-  PlusCircle,
+  Users, Newspaper, Mic2, Podcast, Rss, FileText,
+  TrendingUp, Activity, PlusCircle
 } from 'lucide-react'
 import { useData } from '@/store/DataContext'
+import { useAuth } from '@/hooks/useAuth'
 import { formatDate } from '@/data'
 
-export default function Dashboard() {
+export default function AdminDashboard() {
+  const { can } = useAuth()
   const { articles, videos, podcasts, shows, events } = useData()
 
-  const totalViews = articles.reduce((sum, a) => sum + a.views, 0)
-  const visitors = Math.round(totalViews * 0.62)
+  // --- Stats calculées depuis les données locales (pas d'API) ---
+  const contentsCount = articles.length + videos.length + podcasts.length + shows.length
+  const publicationsCount = articles.length
 
   const stats = [
-    { label: 'Articles', value: articles.length, icon: Newspaper, to: '/admin/articles', color: '#D21034' },
-    { label: 'Vidéos', value: videos.length, icon: Clapperboard, to: '/admin/videos', color: '#00209F' },
-    { label: 'Podcasts', value: podcasts.length, icon: Podcast, to: '/admin/podcasts', color: '#E07B00' },
-    { label: 'Émissions', value: shows.length, icon: Mic2, to: '/admin/emissions', color: '#7C3AED' },
-    { label: 'Événements', value: events.length, icon: CalendarDays, to: '/admin/evenements', color: '#0F7B3D' },
-    { label: 'Visiteurs (mois)', value: visitors.toLocaleString('fr-FR'), icon: Users, to: '/admin', color: '#0E7490' },
-    { label: 'Vues totales', value: totalViews.toLocaleString('fr-FR'), icon: Eye, to: '/admin', color: '#334155' },
-  ]
+    { key: 'usersCount', label: 'Utilisateurs', value: '—', icon: Users, color: 'bg-[#00209F]' },
+    { key: 'contentsCount', label: 'Contenus', value: contentsCount, icon: FileText, color: 'bg-emerald-600' },
+    { key: 'showsCount', label: 'Émissions', value: shows.length, icon: Mic2, color: 'bg-amber-600' },
+    { key: 'podcastsCount', label: 'Podcasts', value: podcasts.length, icon: Podcast, color: 'bg-purple-600' },
+    { key: 'feedsCount', label: 'Flux', value: events.length, icon: Rss, color: 'bg-sky-600' },
+    { key: 'publicationsCount', label: 'Publications', value: publicationsCount, icon: Newspaper, color: 'bg-[#D21034]' },
+  ] as const
 
-  const recent = [...articles]
-    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-    .slice(0, 6)
+  // --- Activité récente simulée depuis les articles ---
+  const recentActivity = [...articles]
+    .sort((a, b) => new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime())
+    .slice(0, 8)
+    .map((a) => ({
+      id: a.id,
+      userName: 'Admin',
+      action: a.status === 'publie' ? `a publié « ${a.title} »` : `a créé le brouillon « ${a.title} »`,
+      createdAt: a.publishedAt || a.createdAt,
+    }))
 
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="font-editorial text-2xl font-black text-neutral-950 md:text-3xl">Dashboard</h1>
-          <p className="text-sm text-neutral-500">Vue d'ensemble de la plateforme Radio Douvanjou Media.</p>
+          <h1 className="font-editorial text-2xl font-black text-neutral-950 md:text-3xl">
+            Tableau de bord
+          </h1>
+          <p className="text-sm text-neutral-500">Vue d'ensemble de la plateforme.</p>
         </div>
         <Link
           to="/admin/articles/nouveau"
@@ -50,94 +52,77 @@ export default function Dashboard() {
         </Link>
       </div>
 
-      {/* Statut des directs */}
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        <div className="flex items-center justify-between rounded-xl border border-neutral-200 bg-white p-5">
-          <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#D21034]/10 text-[#D21034]">
-              <Radio className="h-5 w-5" />
-            </span>
-            <div>
-              <div className="text-sm font-bold text-neutral-950">Radio Live</div>
-              <div className="text-xs text-neutral-500">94.5 FM · Port-au-Prince</div>
-            </div>
-          </div>
-          <span className="flex items-center gap-2 rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">
-            <span className="rdm-live-dot inline-block h-2 w-2 rounded-full bg-green-600" /> En ligne
-          </span>
-        </div>
-        <div className="flex items-center justify-between rounded-xl border border-neutral-200 bg-white p-5">
-          <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#00209F]/10 text-[#00209F]">
-              <Tv className="h-5 w-5" />
-            </span>
-            <div>
-              <div className="text-sm font-bold text-neutral-950">TV Live</div>
-              <div className="text-xs text-neutral-500">Douvanjou TV · HLS</div>
-            </div>
-          </div>
-          <span className="flex items-center gap-2 rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">
-            <span className="rdm-live-dot inline-block h-2 w-2 rounded-full bg-green-600" /> En ligne
-          </span>
-        </div>
-      </div>
-
-      {/* Statistiques */}
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {stats.map((s) => (
-          <Link
-            key={s.label}
-            to={s.to}
-            className="rounded-xl border border-neutral-200 bg-white p-5 transition hover:shadow-md"
-          >
+      {/* Cartes de stats */}
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {stats.map(({ key, label, value, icon: Icon, color }) => (
+          <div key={key} className="rounded-xl border border-neutral-200 bg-white p-5">
             <div className="flex items-center justify-between">
-              <span
-                className="flex h-10 w-10 items-center justify-center rounded-lg"
-                style={{ backgroundColor: `${s.color}1A`, color: s.color }}
-              >
-                <s.icon className="h-5 w-5" />
+              <div>
+                <div className="text-2xl font-black text-neutral-950">{value}</div>
+                <div className="mt-0.5 text-xs font-bold uppercase tracking-wider text-neutral-500">{label}</div>
+              </div>
+              <span className={`flex h-10 w-10 items-center justify-center rounded-lg ${color} text-white`}>
+                <Icon className="h-5 w-5" />
               </span>
-              <TrendingUp className="h-4 w-4 text-green-600" />
             </div>
-            <div className="mt-3 font-editorial text-2xl font-black text-neutral-950">{s.value}</div>
-            <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500">{s.label}</div>
-          </Link>
+          </div>
         ))}
       </div>
 
-      {/* Articles récents */}
-      <div className="mt-8 rounded-xl border border-neutral-200 bg-white">
-        <div className="flex items-center justify-between border-b border-neutral-100 px-5 py-4">
-          <h2 className="font-editorial text-lg font-black text-neutral-950">Articles récents</h2>
-          <Link to="/admin/articles" className="text-xs font-bold uppercase tracking-wider text-[#D21034]">
-            Tout gérer
-          </Link>
-        </div>
-        <div className="divide-y divide-neutral-100">
-          {recent.map((a) => (
-            <div key={a.id} className="flex items-center gap-4 px-5 py-3.5">
-              <img src={a.image} alt="" className="h-11 w-16 rounded object-cover" />
-              <div className="min-w-0 flex-1">
-                <div className="line-clamp-1 text-sm font-semibold text-neutral-900">{a.title}</div>
-                <div className="text-xs text-neutral-500">{formatDate(a.publishedAt)}</div>
+      <div className="mt-8 grid gap-6 lg:grid-cols-3">
+        {/* Activité récente */}
+        <div className="rounded-xl border border-neutral-200 bg-white p-5 lg:col-span-2">
+          <div className="mb-4 flex items-center gap-2">
+            <Activity className="h-4 w-4 text-[#D21034]" />
+            <h2 className="text-sm font-bold uppercase tracking-wider text-neutral-800">Activité récente</h2>
+          </div>
+          <div className="space-y-3">
+            {recentActivity.length === 0 && (
+              <p className="text-sm text-neutral-400">Aucune activité récente.</p>
+            )}
+            {recentActivity.map((log) => (
+              <div key={log.id} className="flex items-start gap-3 text-sm">
+                <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D21034]" />
+                <div>
+                  <span className="font-semibold text-neutral-900">{log.userName}</span>{' '}
+                  <span className="text-neutral-600">{log.action}</span>{' '}
+                  <span className="text-neutral-400">— {log.createdAt ? formatDate(log.createdAt) : 'date inconnue'}</span>
+                </div>
               </div>
-              <span
-                className={
-                  a.status === 'publie'
-                    ? 'rounded-full bg-green-100 px-2.5 py-1 text-[10px] font-bold uppercase text-green-700'
-                    : 'rounded-full bg-amber-100 px-2.5 py-1 text-[10px] font-bold uppercase text-amber-700'
-                }
-              >
-                {a.status === 'publie' ? 'Publié' : 'Brouillon'}
-              </span>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        {/* Accès rapides */}
+        <div className="rounded-xl border border-neutral-200 bg-white p-5">
+          <h2 className="mb-4 text-sm font-bold uppercase tracking-wider text-neutral-800">Accès rapide</h2>
+          <div className="space-y-2">
+            {can('users:read') && (
+              <Link to="/admin/utilisateurs" className="flex items-center gap-2 rounded-lg bg-neutral-50 px-3 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-100">
+                <Users className="h-4 w-4" /> Gérer les utilisateurs
+              </Link>
+            )}
+            {can('feeds:read') && (
+              <Link to="/admin/flux" className="flex items-center gap-2 rounded-lg bg-neutral-50 px-3 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-100">
+                <Rss className="h-4 w-4" /> Gérer les flux
+              </Link>
+            )}
+            {can('podcasts:read') && (
+              <Link to="/admin/podcasts" className="flex items-center gap-2 rounded-lg bg-neutral-50 px-3 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-100">
+                <Podcast className="h-4 w-4" /> Gérer les podcasts
+              </Link>
+            )}
+            {can('settings:read') && (
+              <Link to="/admin/parametres" className="flex items-center gap-2 rounded-lg bg-neutral-50 px-3 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-100">
+                <TrendingUp className="h-4 w-4" /> Paramètres
+              </Link>
+            )}
+          </div>
         </div>
       </div>
 
       <p className="mt-6 text-xs text-neutral-400">
-        Étape 1 (MVP) : les contenus sont stockés dans le navigateur (localStorage). À l'Étape 2, cette console sera
-        connectée à PostgreSQL avec authentification et permissions.
+        MVP : les données sont locales (localStorage). Les stats Utilisateurs/Flux affichent « — » en attendant le backend.
       </p>
     </div>
   )
