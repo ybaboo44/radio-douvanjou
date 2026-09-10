@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Routes, Route } from 'react-router'
 import { DataProvider } from '@/store/DataContext'
 import { PlayerProvider } from '@/store/PlayerContext'
@@ -30,6 +31,18 @@ import AdminPodcasts from '@/pages/admin/Podcasts'
 import AdminSettings from '@/pages/admin/Settings'
 
 export default function App() {
+  useEffect(() => {
+    const handleImageError = (event: Event) => {
+      const image = event.target
+      if (!(image instanceof HTMLImageElement) || image.dataset.fallbackApplied) return
+      image.dataset.fallbackApplied = 'true'
+      image.src = '/image/editorial-placeholder.svg'
+    }
+
+    document.addEventListener('error', handleImageError, true)
+    return () => document.removeEventListener('error', handleImageError, true)
+  }, [])
+
   return (
     <AuthProvider>
       <DataProvider>

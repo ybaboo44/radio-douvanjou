@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <linearGradient id="background" x1="120" y1="80" x2="1050" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#13284A"/>
+      <stop offset="1" stop-color="#07111F"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="370" y1="210" x2="820" y2="670" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6C453"/>
+      <stop offset="1" stop-color="#D21034"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(0 420 -480 0 600 390)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D21034" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#D21034" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path fill="url(#background)" d="M0 0h1200v800H0z"/>
+  <path fill="url(#glow)" d="M0 0h1200v800H0z"/>
+  <circle cx="600" cy="400" r="206" fill="url(#sun)" opacity=".92"/>
+  <circle cx="600" cy="400" r="154" fill="#13284A"/>
+  <path stroke="#fff" stroke-opacity=".14" stroke-width="2" d="M0 530c164-77 282-103 430-70 156 35 218 151 390 132 140-16 253-104 380-83M0 608c164-77 282-103 430-70 156 35 218 151 390 132 140-16 253-104 380-83M0 686c164-77 282-103 430-70 156 35 218 151 390 132 140-16 253-104 380-83"/>
+  <path fill="#D21034" d="M0 0h1200v16H0z"/>
+  <path fill="#00209F" d="M0 16h1200v8H0z"/>
+  <path fill="#F6C453" d="M0 24h1200v5H0z"/>
+</svg>

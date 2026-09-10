@@ -12,7 +12,7 @@ export default function Layout() {
   }, [pathname])
 
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-[#faf9f6]">
       <Header />
       <BreakingBar />
       <main className="flex-1">

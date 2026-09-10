@@ -29,7 +29,28 @@ export default function Home() {
   const radioPlaying = player.track?.isLive && player.playing
 
   return (
-    <div>
+    <div className="min-h-full bg-[#faf9f6] pb-10">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 pt-6 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3">
+          <span className="h-8 w-1 rounded-full bg-[#D21034]" />
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#D21034]">
+              Radio Télévision Douvanjou
+            </p>
+            <p className="mt-1 font-editorial text-sm font-bold text-neutral-800 sm:text-base">
+              La voix d’Haïti, partout dans le monde
+            </p>
+          </div>
+        </div>
+        <Link
+          to="/radio"
+          className="hidden items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold text-neutral-700 shadow-sm transition hover:border-[#D21034] hover:text-[#D21034] sm:flex"
+        >
+          <RadioIcon className="h-4 w-4 text-[#D21034]" />
+          94.5 FM · En direct
+        </Link>
+      </div>
+
       {/* ===================== À LA UNE ===================== */}
       <section className="mx-auto max-w-7xl px-4 pt-8">
         <SectionHeader title="À la une" />

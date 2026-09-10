@@ -6,20 +6,20 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 40 33% 98%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --primary: 350 82% 44%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 20% 94%;
+    --secondary-foreground: 240 10% 12%;
+    --muted: 40 20% 94%;
+    --muted-foreground: 240 4% 42%;
+    --accent: 40 20% 94%;
+    --accent-foreground: 240 10% 12%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
@@ -74,6 +74,12 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    min-width: 320px;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: #d21034;
+    color: #fff;
   }
   .font-editorial {
     font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -129,4 +135,15 @@
 }
 .rdm-live-dot {
   animation: rdm-pulse-dot 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
