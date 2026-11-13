@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -82,7 +82,7 @@
     color: #fff;
   }
   .font-editorial {
-    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 }
 
