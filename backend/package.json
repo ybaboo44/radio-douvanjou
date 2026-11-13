@@ -1,0 +1,12 @@
+{
+  "name": "radio-douvanjou-backend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm --prefix .. run dev:vercel",
+    "dev:vercel": "npm --prefix .. run dev:vercel",
+    "build": "npm --prefix .. run typecheck:api",
+    "typecheck": "tsc -p tsconfig.api.json --noEmit",
+    "lint": "eslint server ../api"
+  }
+}

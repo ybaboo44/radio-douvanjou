@@ -1,0 +1,12 @@
+{
+  "name": "radio-douvanjou-frontend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config vite.config.ts",
+    "build": "npm --prefix .. run build",
+    "build:frontend": "vite build --config vite.config.ts",
+    "preview": "vite preview --config vite.config.ts",
+    "lint": "eslint src"
+  }
+}
