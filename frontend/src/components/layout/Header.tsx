@@ -62,6 +62,7 @@ export default function Header() {
   const { settings } = useSiteSettings()
   const siteName = getSettingValue(settings, 'site.name') || SITE.name
   const [searchOpen, setSearchOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [query, setQuery] = useState('')
   const navigate = useNavigate()
 
@@ -138,7 +139,7 @@ export default function Header() {
           >
             {searchOpen ? <X className="h-5 w-5" /> : <Search className="h-5 w-5" />}
           </button>
-          <Sheet>
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <button
                 type="button"
@@ -160,20 +161,20 @@ export default function Header() {
               </div>
               <nav aria-label="Navigation mobile" className="space-y-1 px-4 py-5">
                 {links.map((item) => (
-                  <SheetClose asChild key={item.path}>
-                    <NavLink
-                      to={item.path}
-                      end={item.path === '/'}
-                      className={({ isActive }) =>
-                        cn(
-                          'flex items-center rounded-lg px-3 py-3 text-sm font-semibold transition',
-                          isActive ? 'bg-red-50 text-[#D21034]' : 'text-neutral-700 hover:bg-neutral-100',
-                        )
-                      }
-                    >
-                      {item.label}
-                    </NavLink>
-                  </SheetClose>
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    end={item.path === '/'}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={({ isActive }) =>
+                      cn(
+                        'flex w-full items-center rounded-lg px-3 py-3 text-sm font-semibold transition',
+                        isActive ? 'bg-red-50 text-[#D21034]' : 'text-neutral-700 hover:bg-neutral-100',
+                      )
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
                 ))}
                 <div className="pt-4">
                   <SheetClose asChild>
