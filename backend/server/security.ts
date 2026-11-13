@@ -47,9 +47,9 @@ const ROLE_PERMISSIONS: Record<UserRole, string[]> = {
 }
 
 const DEFAULT_SETTINGS = [
-  ['site.name', 'GENERAL', 'Nom du site', 'Radio Douvanjou Media'],
+  ['site.name', 'GENERAL', 'Nom du site', 'Radio Télévision Douvanjou'],
   ['site.tagline', 'GENERAL', 'Slogan', "L'info haïtienne, en direct et en profondeur"],
-  ['site.description', 'GENERAL', 'Description', "Radio Douvanjou Media : actualités, radio et TV en direct, vidéos, podcasts, émissions, culture, sport et événements d'Haïti et de la diaspora."],
+  ['site.description', 'GENERAL', 'Description', "Radio Télévision Douvanjou : actualités, radio et TV en direct, vidéos, podcasts, émissions, culture, sport et événements d'Haïti et de la diaspora."],
   ['site.email', 'GENERAL', 'Adresse e-mail', 'contact@radiodouvanjou.com'],
   ['site.phone', 'GENERAL', 'Téléphone', '+509 44 44 4444'],
   ['site.address', 'GENERAL', 'Adresse', 'Port-au-Prince, Haïti'],
@@ -57,11 +57,11 @@ const DEFAULT_SETTINGS = [
   ['social.twitter', 'SOCIAL', 'X / Twitter', 'https://x.com/radiodouvanjou'],
   ['social.instagram', 'SOCIAL', 'Instagram', 'https://instagram.com/radiodouvanjou'],
   ['social.youtube', 'SOCIAL', 'YouTube', 'https://youtube.com/@radiodouvanjou'],
-  ['radio.name', 'RADIO', 'Nom de la radio', 'Radio Douvanjou — 94.5 FM'],
+  ['radio.name', 'RADIO', 'Nom de la radio', 'Radio Télévision Douvanjou'],
   ['radio.url', 'RADIO', 'URL du flux radio', 'https://stream.live.vc.bbcmedia.co.uk/bbc_world_service'],
   ['tv.name', 'RADIO', 'Nom de la chaîne TV', 'Douvanjou TV'],
   ['tv.url', 'RADIO', 'URL du flux TV (HLS)', 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8'],
-  ['podcast.description', 'PODCAST', 'Présentation des podcasts', 'Réécoutez les émissions et les grands entretiens de Radio Douvanjou, où que vous soyez.'],
+  ['podcast.description', 'PODCAST', 'Présentation des podcasts', 'Réécoutez les émissions et les grands entretiens de Radio Télévision Douvanjou, où que vous soyez.'],
   ['podcast.feedUrl', 'PODCAST', 'URL du flux RSS', ''],
 ]
 
@@ -75,6 +75,29 @@ export async function initializeApplication() {
       ON CONFLICT (key) DO NOTHING
     `
   }
+
+  await sql`
+    UPDATE site_settings
+    SET value = 'Radio Télévision Douvanjou'
+    WHERE key = 'site.name' AND value = 'Radio Douvanjou Media'
+  `
+  await sql`
+    UPDATE site_settings
+    SET value = ${"Radio Télévision Douvanjou : actualités, radio et TV en direct, vidéos, podcasts, émissions, culture, sport et événements d'Haïti et de la diaspora."}
+    WHERE key = 'site.description'
+      AND value = ${"Radio Douvanjou Media : actualités, radio et TV en direct, vidéos, podcasts, émissions, culture, sport et événements d'Haïti et de la diaspora."}
+  `
+  await sql`
+    UPDATE site_settings
+    SET value = 'Radio Télévision Douvanjou'
+    WHERE key = 'radio.name' AND value = 'Radio Douvanjou — 94.5 FM'
+  `
+  await sql`
+    UPDATE site_settings
+    SET value = ${'Réécoutez les émissions et les grands entretiens de Radio Télévision Douvanjou, où que vous soyez.'}
+    WHERE key = 'podcast.description'
+      AND value = ${'Réécoutez les émissions et les grands entretiens de Radio Douvanjou, où que vous soyez.'}
+  `
 
   const email = process.env.ADMIN_EMAIL?.trim().toLowerCase()
   const password = process.env.ADMIN_PASSWORD

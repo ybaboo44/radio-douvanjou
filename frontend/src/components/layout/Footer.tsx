@@ -63,13 +63,13 @@ export default function Footer() {
       {/* ============================================
           FOOTER PRINCIPAL
       ============================================ */}
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid min-w-0 grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <div className="grid min-w-0 grid-cols-2 gap-x-5 gap-y-8 sm:gap-x-8 lg:grid-cols-4 lg:gap-10">
 
           {/* ========================================
               MARQUE
           ======================================== */}
-          <div className="lg:pr-6">
+          <div className="col-span-2 min-w-0 lg:col-span-1 lg:pr-6">
             <Link
               to="/"
               aria-label={`${siteName} - Accueil`}
@@ -96,7 +96,7 @@ export default function Footer() {
             </Link>
 
             {/* Description */}
-            <p className="mt-5 max-w-sm text-sm leading-6 text-neutral-400">
+            <p className="mt-5 max-w-sm break-words text-sm leading-6 text-neutral-400">
               {description}
             </p>
 
@@ -131,7 +131,7 @@ export default function Footer() {
           {/* ========================================
               NAVIGATION
           ======================================== */}
-          <div>
+          <div className="min-w-0">
             <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-white">
               Navigation
             </h2>
@@ -153,7 +153,7 @@ export default function Footer() {
           {/* ========================================
               RUBRIQUES
           ======================================== */}
-          <div>
+          <div className="min-w-0">
             <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-white">
               Rubriques
             </h2>
@@ -177,7 +177,7 @@ export default function Footer() {
           {/* ========================================
               CONTACT
           ======================================== */}
-          <div>
+          <div className="col-span-2 min-w-0 lg:col-span-1">
             <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-white">
               Contact
             </h2>
@@ -192,7 +192,7 @@ export default function Footer() {
                     aria-hidden="true"
                   />
 
-                  <span className="leading-5 text-neutral-400">
+                  <span className="min-w-0 break-words leading-5 text-neutral-400">
                     {address}
                   </span>
                 </li>
@@ -210,7 +210,7 @@ export default function Footer() {
                       aria-hidden="true"
                     />
 
-                    <span>{phone}</span>
+                    <span className="min-w-0 break-words">{phone}</span>
                   </a>
                 </li>
               )}
@@ -240,7 +240,7 @@ export default function Footer() {
             ====================================== */}
             <Link
               to="/radio"
-              className="mt-7 inline-flex items-center gap-2.5 rounded-full bg-[#D21034] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all duration-200 hover:bg-[#b00d2b] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#D21034] focus:ring-offset-2 focus:ring-offset-neutral-950"
+              className="mt-7 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#D21034] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all duration-200 hover:bg-[#b00d2b] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#D21034] focus:ring-offset-2 focus:ring-offset-neutral-950 sm:w-auto sm:px-5"
             >
               <span
                 className="rdm-live-dot h-2 w-2 rounded-full bg-white"
@@ -262,7 +262,7 @@ export default function Footer() {
           BARRE INFÉRIEURE
       ============================================ */}
       <div className="border-t border-neutral-800/80">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-5 text-xs sm:flex-row sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-center text-xs sm:flex-row sm:text-left sm:px-6 lg:px-8">
 
           {/* Copyright */}
           <p className="text-neutral-500">
@@ -276,7 +276,7 @@ export default function Footer() {
           {/* Liens légaux */}
           <nav
             aria-label="Informations légales"
-            className="flex items-center gap-5"
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:justify-end"
           >
             <Link
               to="/mentions-legales"

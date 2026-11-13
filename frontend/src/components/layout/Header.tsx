@@ -90,7 +90,7 @@ export default function Header() {
         <Link to="/" aria-label={`${siteName} — Accueil`} className="flex shrink-0 items-center">
           <img
             src="/image/images.png"
-            alt="Radio Douvanjou"
+            alt="Radio Télévision Douvanjou"
             className="h-[68px] w-[132px] object-cover object-center"
           />
         </Link>
@@ -154,7 +154,7 @@ export default function Header() {
                 <Link to="/" aria-label={`${siteName} — Accueil`}>
                   <img
                     src="/image/images.png"
-                    alt="Radio Douvanjou"
+                    alt="Radio Télévision Douvanjou"
                     className="h-[62px] w-[120px] object-cover object-center"
                   />
                 </Link>

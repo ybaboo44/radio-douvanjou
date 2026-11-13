@@ -1,4 +1,4 @@
-# Backend Radio Douvanjou
+# Backend Radio Télévision Douvanjou
 
 L’application utilise une API Vercel (adaptateur dans `../api/[...path].ts`, logique serveur dans `server/`) et PostgreSQL. Les tables nécessaires sont créées automatiquement au premier appel de l’API.
 

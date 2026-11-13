@@ -65,7 +65,7 @@ export default function Actualites() {
       <div className="border-b-2 border-[#D21034] pb-4">
         <h1 className="font-editorial text-3xl font-black tracking-tight text-neutral-950 md:text-4xl">Actualités</h1>
         <p className="mt-1 text-sm text-neutral-600">
-          Toute l'information d'Haïti et de la diaspora, par la rédaction de Radio Douvanjou Media.
+          Toute l'information d'Haïti et de la diaspora, par la rédaction de Radio Télévision Douvanjou.
         </p>
       </div>
 

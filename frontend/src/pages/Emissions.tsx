@@ -26,7 +26,7 @@ export default function Emissions() {
             <span className="h-[3px] w-10 bg-[#D21034]" />
 
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-500">
-              Radio Douvanjou Media
+              Radio Télévision Douvanjou
             </span>
           </div>
 
@@ -35,7 +35,7 @@ export default function Emissions() {
           </h1>
 
           <p className="mt-4 max-w-3xl text-base leading-7 text-neutral-600 md:text-lg">
-            Retrouvez les émissions de Radio Douvanjou Media :
+            Retrouvez les émissions de Radio Télévision Douvanjou :
             information, débats, culture, société, sport et musique.
           </p>
 
@@ -309,11 +309,11 @@ export default function Emissions() {
           <div>
 
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
-              Radio Douvanjou Media
+              Radio Télévision Douvanjou
             </p>
 
             <h2 className="mt-2 font-editorial text-2xl font-black md:text-3xl">
-              Écoutez Radio Douvanjou en direct
+              Écoutez Radio Télévision Douvanjou en direct
             </h2>
 
             <p className="mt-2 text-sm text-white/60">

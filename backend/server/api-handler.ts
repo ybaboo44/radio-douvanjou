@@ -553,7 +553,7 @@ function publicPodcast(row: Podcast) {
   return {
     id: row.id,
     title: row.title,
-    show: row.author || 'Radio Douvanjou',
+    show: row.author || 'Radio Télévision Douvanjou',
     cover: row.imageUrl || '',
     description: row.description || '',
     duration: row.duration || '',

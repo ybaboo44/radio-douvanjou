@@ -1,14 +1,14 @@
 // ============================================================
-// CONFIGURATION GLOBALE — Radio Douvanjou Media
+// CONFIGURATION GLOBALE — Radio Télévision Douvanjou
 // Modifiez les URL des flux ici (radio / TV) sans toucher au code.
 // ============================================================
 
 export const SITE = {
-  name: 'Radio Douvanjou Media',
-  shortName: 'RDM',
+  name: 'Radio Télévision Douvanjou',
+  shortName: 'RTD',
   tagline: "L'info haïtienne, en direct et en profondeur",
   description:
-    "Radio Douvanjou Media : actualités, radio et TV en direct, vidéos, podcasts, émissions, culture, sport et événements d'Haïti et de la diaspora.",
+    "Radio Télévision Douvanjou : actualités, radio et TV en direct, vidéos, podcasts, émissions, culture, sport et événements d'Haïti et de la diaspora.",
   email: 'contact@radiodouvanjou.com',
   phone: '+509 44 44 4444',
   address: 'Port-au-Prince, Haïti',
@@ -25,7 +25,7 @@ export const STREAMS = {
   radio: {
     // Flux audio en direct (MP3/AAC/HLS)
     url: 'https://stream.live.vc.bbcmedia.co.uk/bbc_world_service',
-    mountName: 'Radio Douvanjou — 94.5 FM',
+    mountName: 'Radio Télévision Douvanjou',
   },
   tv: {
     // Flux vidéo HLS (.m3u8)

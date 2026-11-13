@@ -186,7 +186,7 @@ export default function TV() {
                 <span className="h-[3px] w-10 bg-[#D21034]" />
 
                 <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/50">
-                  Radio Douvanjou Media
+                  Radio Télévision Douvanjou
                 </span>
 
               </div>
@@ -206,7 +206,7 @@ export default function TV() {
               </h1>
 
               <p className="mt-4 max-w-2xl text-sm leading-6 text-white/60 md:text-base">
-                Regardez Radio Douvanjou Media en direct et retrouvez
+                Regardez Radio Télévision Douvanjou en direct et retrouvez
                 nos programmes, nos émissions et toute notre actualité.
               </p>
 
@@ -380,7 +380,7 @@ export default function TV() {
               </div>
 
               <p className="mt-2 text-xs text-white/60">
-                Avec la rédaction RDM
+                Avec la rédaction de Radio Télévision Douvanjou
               </p>
 
             </div>
@@ -545,7 +545,7 @@ export default function TV() {
                 <Radio className="h-5 w-5 text-[#D21034]" />
 
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400">
-                  Radio Douvanjou Media
+                  Radio Télévision Douvanjou
                 </span>
 
               </div>

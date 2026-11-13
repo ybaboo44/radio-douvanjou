@@ -1,5 +1,5 @@
 // ============================================================
-// DONNÉES DE DÉMONSTRATION — Radio Douvanjou Media (Étape 1 MVP)
+// DONNÉES DE DÉMONSTRATION — Radio Télévision Douvanjou (Étape 1 MVP)
 // Ces données seront remplacées par PostgreSQL à l'Étape 2.
 // ============================================================
 
@@ -171,7 +171,7 @@ export const articles: Article[] = [
     content: [
       "Le gouvernement haïtien a présenté ce jeudi un plan de sécurité renforcé pour le centre de Port-au-Prince, articulé autour d'un déploiement conjoint de la Police nationale d'Haïti et des Forces armées. L'objectif affiché : reprendre le contrôle des grands axes commerciaux et permettre la réouverture progressive des marchés et des banques du centre-ville.",
       "Selon le communiqué officiel, le dispositif prévoit des patrouilles permanentes, des points de contrôle mobiles et la réhabilitation de plusieurs sous-commissariats fermés ces derniers mois. Des unités spécialisées seront également affectées à la protection des institutions publiques et des portes d'entrée de la capitale.",
-      "Les commerçants du marché Hyppolite, contactés par Radio Douvanjou Media, se disent « prudemment optimistes ». Plusieurs d'entre eux réclament un calendrier précis et des garanties de continuité, rappelant que des opérations similaires avaient été interrompues par le passé.",
+      "Les commerçants du marché Hyppolite, contactés par Radio Télévision Douvanjou, se disent « prudemment optimistes ». Plusieurs d'entre eux réclament un calendrier précis et des garanties de continuité, rappelant que des opérations similaires avaient été interrompues par le passé.",
       "Les organisations de la société civile saluent l'annonce tout en appelant à une stratégie de plus long terme, intégrant la justice, l'emploi des jeunes et la reconstruction des quartiers touchés. Le Premier ministre a promis un premier bilan public dans trente jours.",
     ],
     image: img('rdm-securite-pap'),
@@ -214,7 +214,7 @@ export const articles: Article[] = [
     content: [
       "Après plusieurs semaines d'appréciation relative, la gourde semble se stabiliser sur le marché des changes. La Banque de la République d'Haïti a confirmé cette tendance en annonçant une série de mesures destinées à la consolider : injections ciblées de devises sur le marché interbancaire, resserrement des règles de déclaration pour les sociétés de transfert et plafonnement de certaines positions spéculatives.",
       "Le gouverneur de la banque centrale a souligné que la remontée des transferts de la diaspora et la discipline budgétaire du Trésor public expliquent en partie cette accalmie. Il a toutefois prévenu que la stabilité resterait « fragile » tant que la production nationale et les exportations ne repartiraient pas.",
-      "Du côté des importateurs, on salue une visibilité retrouvée pour fixer les prix, même si le coût du panier de la ménagère reste élevé. Les économistes interrogés par RDM appellent à profiter de la fenêtre pour assainir le marché des changes et rapprocher les taux officiel et parallèle.",
+      "Du côté des importateurs, on salue une visibilité retrouvée pour fixer les prix, même si le coût du panier de la ménagère reste élevé. Les économistes interrogés par Radio Télévision Douvanjou appellent à profiter de la fenêtre pour assainir le marché des changes et rapprocher les taux officiel et parallèle.",
     ],
     image: img('rdm-gourde-brh'),
     categoryId: 'economie',
@@ -232,7 +232,7 @@ export const articles: Article[] = [
     excerpt:
       "À quelques semaines de la rentrée, les familles jonglent entre la hausse des frais de scolarité, le coût des fournitures et la fermeture temporaire de plusieurs écoles dans la capitale.",
     content: [
-      "À trois semaines de la rentrée des classes, les librairies et marchés de fournitures scolaires de Port-au-Prince connaissent leur traditionnelle effervescence — mais avec, cette année, une inquiétude palpable. Les parents interrogés par RDM évoquent des frais de scolarité en hausse de 10 à 25 % dans de nombreuses écoles privées, auxquels s'ajoutent le coût des uniformes et des manuels.",
+      "À trois semaines de la rentrée des classes, les librairies et marchés de fournitures scolaires de Port-au-Prince connaissent leur traditionnelle effervescence — mais avec, cette année, une inquiétude palpable. Les parents interrogés par Radio Télévision Douvanjou évoquent des frais de scolarité en hausse de 10 à 25 % dans de nombreuses écoles privées, auxquels s'ajoutent le coût des uniformes et des manuels.",
       "Le ministère de l'Éducation nationale indique avoir ouvert des négociations avec les associations d'écoles privées pour encadrer les augmentations et élargir le programme de cantines scolaires. Un fonds d'urgence doit également soutenir la réouverture des établissements déplacés de certains quartiers de la capitale.",
       "Dans les départements, la situation est contrastée : si les effectifs s'annoncent stables aux Cayes et au Cap-Haïtien, plusieurs écoles de l'Artibonite accueilleront des élèves déplacés de la métropole. Les syndicats d'enseignants rappellent, eux, que le paiement des arriérés de salaires conditionnera une rentrée sereine.",
     ],
@@ -349,7 +349,7 @@ export const articles: Article[] = [
     content: [
       "À Port-au-Prince comme à Miami ou Paris, une génération de producteurs née avec le millénaire réécrit la grammaire du compas : guitare délayée conservée, mais batterie plus sèche, nappes électroniques et featurings avec des artistes afrobeats ou dancehall. Le résultat, baptisé « konpa nouvelle génération », cartonne sur les plateformes.",
       "Les aînés observent le mouvement avec un mélange de fierté et de vigilance. « Le compas a toujours absorbé ce qui l'entourait, rappelle un guitariste historique. L'essentiel est que la ligne de guitare et le swing restent haïtiens. »",
-      "Signe des temps : les soirées konpa attirent de nouveau un public jeune dans la capitale, et plusieurs festivals internationaux programment des scènes dédiées. RDM consacrera une émission spéciale au phénomène ce week-end, avec sessions live et débat entre générations.",
+      "Signe des temps : les soirées konpa attirent de nouveau un public jeune dans la capitale, et plusieurs festivals internationaux programment des scènes dédiées. Radio Télévision Douvanjou consacrera une émission spéciale au phénomène ce week-end, avec sessions live et débat entre générations.",
     ],
     image: img('rdm-konpa-musique'),
     categoryId: 'culture',
@@ -406,7 +406,7 @@ export const articles: Article[] = [
     content: [
       "Les services météorologiques régionaux prévoient une saison cyclonique active dans l'Atlantique. En conséquence, la Direction de la protection civile a avancé son calendrier : exercices d'évacuation dans les communes côtières, inventaire et renforcement des abris provisoires, et campagne multilingue de sensibilisation sur radio et réseaux sociaux.",
       "Nouveauté cette année : un système d'alerte par SMS géolocalisés, testé avec les opérateurs, et des « brigades communales » formées à la recherche et au sauvetage de base. Les stocks de kits — eau, bâches, médicaments — sont en cours de prépositionnement dans les dix départements.",
-      "Les autorités rappellent les réflexes essentiels : document de famille à l'abri, réserve de trois jours, repères d'évacuation connus de tous les membres du foyer. RDM relaiera les bulletins officiels en continu tout au long de la saison.",
+      "Les autorités rappellent les réflexes essentiels : document de famille à l'abri, réserve de trois jours, repères d'évacuation connus de tous les membres du foyer. Radio Télévision Douvanjou relaiera les bulletins officiels en continu tout au long de la saison.",
     ],
     image: img('rdm-cyclone-preparation'),
     categoryId: 'haiti',
@@ -501,7 +501,7 @@ export const articles: Article[] = [
     content: [
       "Il a fallu une prolongation et un lancer décisif à deux secondes de la sirène, mais l'équipe nationale féminine de basket a validé l'essentiel : une victoire qui la place à un succès de la première qualification de son histoire pour la Coupe du monde.",
       "Portées par une meneuse de 19 ans formée au pays et une intérieure évoluant en ligue européenne, les Haïtiennes ont renversé un match mal embarqué à la mi-temps. Le staff salue « une culture de défense » construite sur trois ans de camps.",
-      "L'ultime journée du tournoi se jouera dans trois jours. La fédération appelle la diaspora à garnir les tribunes, et RDM retransmettra la rencontre en direct à la radio et en commentaires écrits sur le site.",
+      "L'ultime journée du tournoi se jouera dans trois jours. La fédération appelle la diaspora à garnir les tribunes, et Radio Télévision Douvanjou retransmettra la rencontre en direct à la radio et en commentaires écrits sur le site.",
     ],
     image: img('rdm-basket-femmes'),
     categoryId: 'sport',
@@ -685,7 +685,7 @@ export const podcasts: Podcast[] = [
   {
     id: 'p4',
     title: 'Mangrove : la côte Sud replante son bouclier',
-    show: 'Reportages RDM',
+    show: 'Reportages RTD',
     cover: img('rdm-podcast-mangrove', 600, 600),
     description:
       "Reportage dans les pépinières d'Aquin : pêcheurs, scientifiques et élus racontent la restauration de 200 hectares de mangrove.",
@@ -922,11 +922,11 @@ export const radioSchedule: ScheduleSlot[] = [
   { time: '05h00 – 06h00', show: 'Prière & Méditation', host: 'Pasteur E. Lubin' },
   { time: '06h00 – 09h00', show: 'Douvanjou Matin', host: 'J.-P. Baptiste & M.-R. Delva', live: true },
   { time: '09h00 – 11h00', show: 'Santé & Bien-être', host: 'Dr. F. Célestin' },
-  { time: '11h00 – 13h00', show: 'Midi Info', host: 'La rédaction RDM' },
+  { time: '11h00 – 13h00', show: 'Midi Info', host: 'La rédaction RTD' },
   { time: '13h00 – 15h00', show: 'Konpa Détente', host: 'DJ Wilguens' },
   { time: '15h00 – 17h00', show: 'Femmes & Société', host: 'N. C. François' },
   { time: '17h00 – 18h00', show: 'Zone Sport', host: 'R. Saint-Fleur' },
-  { time: '18h00 – 19h00', show: 'Journal du soir', host: 'La rédaction RDM' },
+  { time: '18h00 – 19h00', show: 'Journal du soir', host: 'La rédaction RTD' },
   { time: '19h00 – 20h30', show: 'Le Débat', host: 'M.-R. Delva' },
   { time: '20h30 – 22h00', show: 'Balafon Diaspora', host: 'E. M. André' },
   { time: '22h00 – 00h00', show: 'Nuit Zouk & Slows', host: 'Automatique' },

@@ -18,7 +18,7 @@ const DEFAULT_SETTINGS: Setting[] = [
   { id: 'radio.url', category: 'RADIO', key: 'radio.url', label: 'URL du flux radio', value: STREAMS.radio.url },
   { id: 'tv.name', category: 'RADIO', key: 'tv.name', label: 'Nom de la chaîne TV', value: STREAMS.tv.channelName },
   { id: 'tv.url', category: 'RADIO', key: 'tv.url', label: 'URL du flux TV (HLS)', value: STREAMS.tv.url },
-  { id: 'podcast.description', category: 'PODCAST', key: 'podcast.description', label: 'Présentation des podcasts', value: 'Réécoutez les émissions et les grands entretiens de Radio Douvanjou, où que vous soyez.' },
+  { id: 'podcast.description', category: 'PODCAST', key: 'podcast.description', label: 'Présentation des podcasts', value: 'Réécoutez les émissions et les grands entretiens de Radio Télévision Douvanjou, où que vous soyez.' },
   { id: 'podcast.feedUrl', category: 'PODCAST', key: 'podcast.feedUrl', label: 'URL du flux RSS', value: '' },
 ]
 

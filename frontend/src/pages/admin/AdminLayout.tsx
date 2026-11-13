@@ -77,7 +77,7 @@ export default function AdminLayout() {
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#D21034] text-white">
             <Podcast className="h-4 w-4" />
           </span>
-          <span className="font-editorial text-sm font-black text-neutral-950">RDM Admin</span>
+          <span className="font-editorial text-sm font-black text-neutral-950">RTD Admin</span>
         </div>
 
         <div className="min-h-0 flex-1 overflow-y-auto">
@@ -103,7 +103,7 @@ export default function AdminLayout() {
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#D21034] text-white">
             <Podcast className="h-4 w-4" />
           </span>
-          <span className="truncate font-editorial text-sm font-black text-neutral-950">RDM Admin</span>
+          <span className="truncate font-editorial text-sm font-black text-neutral-950">RTD Admin</span>
         </div>
         <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
           <SheetTrigger asChild>

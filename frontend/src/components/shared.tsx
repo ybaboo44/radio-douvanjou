@@ -146,7 +146,7 @@ export function Newsletter() {
         </p>
         {done ? (
           <p className="mx-auto mt-6 max-w-md rounded-lg bg-green-900/40 px-4 py-3 text-sm text-green-300">
-            Merci ! Votre inscription à la newsletter de Radio Douvanjou Media est confirmée.
+            Merci ! Votre inscription à la newsletter de Radio Télévision Douvanjou est confirmée.
           </p>
         ) : (
           <form

@@ -1,4 +1,4 @@
-# Radio Douvanjou Media
+# Radio Télévision Douvanjou
 
 Site éditorial réalisé avec React, TypeScript et Vite. Le backend utilise des fonctions Vercel et une base PostgreSQL.
 

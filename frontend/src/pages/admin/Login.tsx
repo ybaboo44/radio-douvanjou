@@ -41,7 +41,7 @@ export default function AdminLogin() {
             <Radio className="h-6 w-6" />
           </span>
           <h1 className="mt-4 font-editorial text-xl font-black text-neutral-950">
-            Radio Douvanjou
+            Radio Télévision Douvanjou
           </h1>
           <p className="text-sm text-neutral-500">Connexion administration</p>
         </div>

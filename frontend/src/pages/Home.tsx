@@ -21,7 +21,7 @@ export default function Home() {
   const player = usePlayer()
   const { settings } = useSiteSettings()
   const configuredRadioName = getSettingValue(settings, 'radio.name') || STREAMS.radio.mountName
-  const radioName = configuredRadioName.replace(/\s*(?:[—–-]\s*)?\d+(?:[.,]\d+)?\s*FM\b/gi, '').trim() || 'Radio Douvanjou'
+  const radioName = configuredRadioName.replace(/\s*(?:[—–-]\s*)?\d+(?:[.,]\d+)?\s*FM\b/gi, '').trim() || 'Radio Télévision Douvanjou'
   const radioUrl = getSettingValue(settings, 'radio.url') || STREAMS.radio.url
   const tvName = getSettingValue(settings, 'tv.name') || STREAMS.tv.channelName
   const siteName = getSettingValue(settings, 'site.name') || 'Radio Télévision Douvanjou'
@@ -150,7 +150,7 @@ export default function Home() {
               {radioName}
             </h2>
             <p className="mt-3 max-w-lg text-neutral-400">
-              Écoutez Radio Douvanjou partout dans le monde : information continue, grands entretiens, débats et le
+              Écoutez Radio Télévision Douvanjou partout dans le monde : information continue, grands entretiens, débats et le
               meilleur de la musique haïtienne, 24h/24.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4">

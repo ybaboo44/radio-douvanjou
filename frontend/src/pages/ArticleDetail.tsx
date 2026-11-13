@@ -82,7 +82,7 @@ export default function ArticleDetail() {
       <figure className="mt-8 overflow-hidden rounded-xl">
         <img src={article.image} alt={article.title} className="aspect-[16/9] w-full object-cover" />
         <figcaption className="mt-2 text-xs text-neutral-500">
-          Illustration : {category?.name} — Radio Douvanjou Media
+          Illustration : {category?.name} — Radio Télévision Douvanjou
         </figcaption>
       </figure>
 
